@@ -1,0 +1,31 @@
+﻿@model TestProject.Models.MoviesModel.MovieMainPageViewModel
+
+@{
+    ViewBag.Title = "Movie Information";
+    var style = @Model.Description.Length > 1000 ? "overflow-y: scroll" : string.Empty;
+}
+
+<div class="card mb-3 movie-about-mainblock">
+  <div class="row no-gutters">
+      <div class="col-md-4 ">
+          <figure class="movie-about-image">
+              <img src="@Model.PathToPoster" class="card-img movie-about-image-pic" alt="...">
+              @if (@Model.WhoAdded == HttpContext.Current.User.Identity.Name)
+          {
+          <figcaption class="movie-footer">
+              <a href="@Url.Action("MovieConfigPage", "Movies", new { id = @Model.Id })" class="nav-link link-to-edit-movie" target="_blank">Редактировать</a>
+          </figcaption>
+          }
+          </figure>
+      </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+          <p class="card-text">Год выпуска: @Model.YearOfCreate</p>
+          <p class="card-text">Режиссёр: @Model.NameOfDirector</p>
+          <p class="card-text">Кто добавил на сайт: @Model.WhoAdded</p>
+          <p class="card-text">Описание: <p class="card-text movie-description" style = "@style">@Model.Description</p></p>
+      </div>
+    </div>
+  </div>
+</div>

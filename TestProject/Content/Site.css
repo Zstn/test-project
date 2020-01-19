@@ -1,0 +1,187 @@
+﻿.movie-footer {
+    visibility: hidden;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background: rgba(211, 211, 211, 0.7);
+}
+
+.mainpage-preview-pic {
+    display: block;
+    height: 350px;
+    width: 250px;
+    padding: 0 !important;
+}
+
+.mainpage-preview {
+    margin-bottom: 20px;
+}
+
+.movie-about-image {
+    position: relative;
+    margin: 0;
+}
+
+.movie-image {
+    position: relative;
+    margin: 0;
+}
+
+.login-form {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.movie-image:hover > .movie-image-header {
+
+    cursor: pointer;
+    height: 3em;
+    opacity: 1;
+}
+
+.movie-image:hover > .movie-image-header p {
+    -moz-transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+}
+
+.movie-image > .movie-image-header p {
+    font-size: 20px;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.movie-image-header {
+    height: 0;
+    top: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    background: rgba(211, 211, 211, 0.7);
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.movie-about-mainblock {
+    background: rgba(211, 211, 211, 0.7);
+}
+
+.movie-about-image-pic {
+    height: 500px;
+}
+
+.movie-about-image:hover > .movie-footer{
+    visibility: visible;
+    cursor: pointer;
+}
+
+.movie-description {
+    height: 240px;
+}
+
+.link-to-edit-movie {
+    font-size: 25px;
+    color: black;
+}
+
+.link-to-edit-movie:hover {
+    color: white;
+}
+
+.body-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.pagination-button {
+    border-radius: 100px !important;
+    margin: 5px
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    z-index: -1;
+    background: url(/images/background/background.jpg) center/cover no-repeat;
+    filter: blur(7px);
+}
+
+.bd-header {
+    top: 0;
+    z-index: 1000;
+    position: sticky;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height:100%; 
+    position:relative;
+    padding-bottom: 30px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #343a40;
+    padding-top: 10px;
+
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.page-link {
+    color: black;
+    background-color: lightgrey;
+}
+
+.page-item.active .page-link {
+    border-color: dimgrey;
+    background-color: dimgrey;
+}
+
+.movie-configpage-form {
+    background-color: rgba(211, 211, 211, 0.7) !important;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.loginpage-form {
+    background-color: rgba(211, 211, 211, 0.7) !important;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.registrationpage-form {
+    background-color: rgba(211, 211, 211, 0.7) !important;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.register-form {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.redirect-to-login {
+    color: darkblue;
+}

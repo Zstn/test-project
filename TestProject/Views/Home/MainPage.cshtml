@@ -1,0 +1,63 @@
+﻿@using TestProject.Controllers
+@using TestProject.Models.MoviesModel
+@model MovieMainPageViewModel
+@{
+    ViewBag.Title = "Main Page";
+}
+
+<div class="row" id="movies_homepage">
+    @foreach (var movie in Model.Movies)
+    {  
+        <div class="col-md-3 mainpage-preview">
+            <figure class="movie-image">
+                <a href="@Url.Action("MovieViewPage", "Home", new { id = movie.Id })" target="_blank">
+                    <img src="@movie.PathToPoster" class="mainpage-preview-pic rounded img-thumbnail"/>
+                </a>
+                <figcaption class="movie-image-header">
+                    <p>@movie.Name</p>
+                </figcaption>
+            </figure>
+        </div>  
+    }  
+
+</div>
+<ul class="pagination justify-content-center">
+    @if (Model.CurrentPage > 1)
+    {
+        <li class="page-item">
+            <a class="page-link pagination-button" href="@Url.Action("MainPage", new { page = 1 })" aria-label="FirstPage">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+    }
+    @{
+        var startPage = Model.CurrentPage - 2;
+        var endPage = Model.CurrentPage + 2;
+        if (startPage <= 0)
+        {
+            endPage -= (startPage - 1);
+            startPage = 1;
+        }
+        if (endPage > Model.PagesCount)
+        {
+            endPage = Model.PagesCount;
+            if (endPage > 5)
+            {
+                startPage = endPage - 4;
+            }
+        }
+    }
+
+    @for (var page = startPage; page <= endPage; page++)
+    {
+        <li class="@(page == Model.CurrentPage ? "page-item active" : "page-item")">
+            <a href="@Url.Action("MainPage", new { page = page })" class="page-link pagination-button">@page</a>
+        </li>
+    }
+    <li class="page-item">
+        <a class="page-link pagination-button" href="@Url.Action("MainPage", new { page = Model.PagesCount })" aria-label="LastPage">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+    </li>
+</ul>
+
